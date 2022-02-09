@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "testingapp2",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/tim/XcodeProjects/LinkedInLearning/Project/Ex_Files_Shared_Economy_for_iOS_Development/Exercise Files/TestingApp2/amplify/backend/api/testingapp2/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authtestingapp2491f000a"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 360,
+        "apiKeyExpirationDate": "2023-01-31T20:10:52.322Z",
+        "keyDescription": "test user auth and location"
+      }
+    ]
+  }
+}
