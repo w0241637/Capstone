@@ -1,0 +1,21 @@
+type AppUser @model @auth(rules: [
+  { allow: public, operations: [read]}
+  { allow: owner }
+]) {
+  id: ID!
+  userName: String
+  locLat: Float
+  locLng: Float
+}
+
+type SvcReq @model @auth(rules: [
+  { allow: public, operations: [read]}
+  { allow: owner }
+]) {
+  id: ID!
+  custUName: String
+  provUName: String
+  svcLat: Float
+  svcLng: Float
+  svcAddr: String
+}

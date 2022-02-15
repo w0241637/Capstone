@@ -1,0 +1,79 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "api": {
+        "plugins": {
+            "awsAPIPlugin": {
+                "testingapp2": {
+                    "endpointType": "GraphQL",
+                    "endpoint": "https://fsp5r23kgnczllbxrnxeblz64i.appsync-api.ca-central-1.amazonaws.com/graphql",
+                    "region": "ca-central-1",
+                    "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+                    "apiKey": "da2-pnl52tf6rfhqbbjcgv3gegi2j4"
+                }
+            }
+        }
+    },
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify/cli",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "CredentialsProvider": {
+                    "CognitoIdentity": {
+                        "Default": {
+                            "PoolId": "ca-central-1:708566cf-52ba-4c5c-8517-75412fb76ee6",
+                            "Region": "ca-central-1"
+                        }
+                    }
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "ca-central-1_Zi0i6uZkY",
+                        "AppClientId": "1r5rhaah396tkmt1f09pc56dev",
+                        "Region": "ca-central-1"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "authenticationFlowType": "USER_SRP_AUTH",
+                        "socialProviders": [],
+                        "usernameAttributes": [],
+                        "signupAttributes": [
+                            "EMAIL"
+                        ],
+                        "passwordProtectionSettings": {
+                            "passwordPolicyMinLength": 8,
+                            "passwordPolicyCharacters": []
+                        },
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [
+                            "SMS"
+                        ],
+                        "verificationMechanisms": [
+                            "EMAIL"
+                        ]
+                    }
+                },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://fsp5r23kgnczllbxrnxeblz64i.appsync-api.ca-central-1.amazonaws.com/graphql",
+                        "Region": "ca-central-1",
+                        "AuthMode": "AMAZON_COGNITO_USER_POOLS",
+                        "ClientDatabasePrefix": "testingapp2_AMAZON_COGNITO_USER_POOLS"
+                    },
+                    "testingapp2_API_KEY": {
+                        "ApiUrl": "https://fsp5r23kgnczllbxrnxeblz64i.appsync-api.ca-central-1.amazonaws.com/graphql",
+                        "Region": "ca-central-1",
+                        "AuthMode": "API_KEY",
+                        "ApiKey": "da2-pnl52tf6rfhqbbjcgv3gegi2j4",
+                        "ClientDatabasePrefix": "testingapp2_API_KEY"
+                    }
+                }
+            }
+        }
+    }
+}

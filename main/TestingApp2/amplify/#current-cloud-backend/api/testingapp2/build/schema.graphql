@@ -1,0 +1,229 @@
+
+type AppUser @aws_api_key {
+  id: ID!
+  userName: String
+  locLat: Float
+  locLng: Float
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type SvcReq @aws_api_key {
+  id: ID!
+  custUName: String
+  provUName: String
+  svcLat: Float
+  svcLng: Float
+  svcAddr: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelAppUserConnection @aws_api_key {
+  items: [AppUser]!
+  nextToken: String
+}
+
+input ModelAppUserFilterInput {
+  id: ModelIDInput
+  userName: ModelStringInput
+  locLat: ModelFloatInput
+  locLng: ModelFloatInput
+  and: [ModelAppUserFilterInput]
+  or: [ModelAppUserFilterInput]
+  not: ModelAppUserFilterInput
+}
+
+type Query {
+  getAppUser(id: ID!): AppUser @aws_api_key
+  listAppUsers(filter: ModelAppUserFilterInput, limit: Int, nextToken: String): ModelAppUserConnection @aws_api_key
+  getSvcReq(id: ID!): SvcReq @aws_api_key
+  listSvcReqs(filter: ModelSvcReqFilterInput, limit: Int, nextToken: String): ModelSvcReqConnection @aws_api_key
+}
+
+input ModelAppUserConditionInput {
+  userName: ModelStringInput
+  locLat: ModelFloatInput
+  locLng: ModelFloatInput
+  and: [ModelAppUserConditionInput]
+  or: [ModelAppUserConditionInput]
+  not: ModelAppUserConditionInput
+}
+
+input CreateAppUserInput {
+  id: ID
+  userName: String
+  locLat: Float
+  locLng: Float
+}
+
+input UpdateAppUserInput {
+  id: ID!
+  userName: String
+  locLat: Float
+  locLng: Float
+}
+
+input DeleteAppUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createAppUser(input: CreateAppUserInput!, condition: ModelAppUserConditionInput): AppUser @aws_api_key
+  updateAppUser(input: UpdateAppUserInput!, condition: ModelAppUserConditionInput): AppUser @aws_api_key
+  deleteAppUser(input: DeleteAppUserInput!, condition: ModelAppUserConditionInput): AppUser @aws_api_key
+  createSvcReq(input: CreateSvcReqInput!, condition: ModelSvcReqConditionInput): SvcReq @aws_api_key
+  updateSvcReq(input: UpdateSvcReqInput!, condition: ModelSvcReqConditionInput): SvcReq @aws_api_key
+  deleteSvcReq(input: DeleteSvcReqInput!, condition: ModelSvcReqConditionInput): SvcReq @aws_api_key
+}
+
+type Subscription {
+  onCreateAppUser: AppUser @aws_subscribe(mutations: ["createAppUser"]) @aws_api_key
+  onUpdateAppUser: AppUser @aws_subscribe(mutations: ["updateAppUser"]) @aws_api_key
+  onDeleteAppUser: AppUser @aws_subscribe(mutations: ["deleteAppUser"]) @aws_api_key
+  onCreateSvcReq: SvcReq @aws_subscribe(mutations: ["createSvcReq"]) @aws_api_key
+  onUpdateSvcReq: SvcReq @aws_subscribe(mutations: ["updateSvcReq"]) @aws_api_key
+  onDeleteSvcReq: SvcReq @aws_subscribe(mutations: ["deleteSvcReq"]) @aws_api_key
+}
+
+type ModelSvcReqConnection @aws_api_key {
+  items: [SvcReq]!
+  nextToken: String
+}
+
+input ModelSvcReqFilterInput {
+  id: ModelIDInput
+  custUName: ModelStringInput
+  provUName: ModelStringInput
+  svcLat: ModelFloatInput
+  svcLng: ModelFloatInput
+  svcAddr: ModelStringInput
+  and: [ModelSvcReqFilterInput]
+  or: [ModelSvcReqFilterInput]
+  not: ModelSvcReqFilterInput
+}
+
+input ModelSvcReqConditionInput {
+  custUName: ModelStringInput
+  provUName: ModelStringInput
+  svcLat: ModelFloatInput
+  svcLng: ModelFloatInput
+  svcAddr: ModelStringInput
+  and: [ModelSvcReqConditionInput]
+  or: [ModelSvcReqConditionInput]
+  not: ModelSvcReqConditionInput
+}
+
+input CreateSvcReqInput {
+  id: ID
+  custUName: String
+  provUName: String
+  svcLat: Float
+  svcLng: Float
+  svcAddr: String
+}
+
+input UpdateSvcReqInput {
+  id: ID!
+  custUName: String
+  provUName: String
+  svcLat: Float
+  svcLng: Float
+  svcAddr: String
+}
+
+input DeleteSvcReqInput {
+  id: ID!
+}
+

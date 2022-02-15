@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "testingapp2",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authtestingapp2491f000a",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-testingapp2-testappenv-203428-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/e7cdaae23af41934b5782e1095baf0a842ec80e6"
+}

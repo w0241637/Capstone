@@ -1,0 +1,73 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateAppUser($owner: String) {
+  onCreateAppUser(owner: $owner) {
+    id
+    userName
+    locLat
+    locLng
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateAppUser($owner: String) {
+  onUpdateAppUser(owner: $owner) {
+    id
+    userName
+    locLat
+    locLng
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteAppUser($owner: String) {
+  onDeleteAppUser(owner: $owner) {
+    id
+    userName
+    locLat
+    locLng
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreateSvcReq($owner: String) {
+  onCreateSvcReq(owner: $owner) {
+    id
+    custUName
+    provUName
+    svcLat
+    svcLng
+    svcAddr
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateSvcReq($owner: String) {
+  onUpdateSvcReq(owner: $owner) {
+    id
+    custUName
+    provUName
+    svcLat
+    svcLng
+    svcAddr
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteSvcReq($owner: String) {
+  onDeleteSvcReq(owner: $owner) {
+    id
+    custUName
+    provUName
+    svcLat
+    svcLng
+    svcAddr
+    createdAt
+    updatedAt
+    owner
+  }
+}
