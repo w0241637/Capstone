@@ -15,6 +15,7 @@
         "apiKeyExpirationDate": "2023-02-14T17:42:18.717Z",
         "keyDescription": "for capstone read/write location"
       }
-    ]
+    ],
+    "conflictResolution": {}
   }
 }

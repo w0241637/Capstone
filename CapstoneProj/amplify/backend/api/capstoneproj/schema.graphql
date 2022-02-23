@@ -1,6 +1,7 @@
 type AppUser @model @auth(rules: [
   { allow: public, operations: [read]}
   { allow: owner }
+  { allow: private }
 ]) {
   id: ID!
   userName: String
@@ -11,6 +12,7 @@ type AppUser @model @auth(rules: [
 type SvcReq @model @auth(rules: [
   { allow: public, operations: [read]}
   { allow: owner }
+  { allow: private }
 ]) {
   id: ID!
   custUName: String
