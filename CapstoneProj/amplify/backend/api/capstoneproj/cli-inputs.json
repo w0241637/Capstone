@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "capstoneproj",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/tim/XcodeProjects/Capstone/CapstoneProj/amplify/backend/api/capstoneproj/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcapstoneproj5f30627e"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 364,
+        "apiKeyExpirationDate": "2023-02-14T17:42:18.717Z",
+        "keyDescription": "for capstone read/write location"
+      }
+    ],
+    "conflictResolution": {}
+  }
+}

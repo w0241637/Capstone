@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'CapstoneProj' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CapstoneProj
+
+pod 'AWSMobileClient'
+pod 'AWSAuthUI'
+pod 'AWSUserPoolsSignIn'
+pod 'AWSAppSync'
+
+  target 'CapstoneProjTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CapstoneProjUITests' do
+    # Pods for testing
+  end
+
+end

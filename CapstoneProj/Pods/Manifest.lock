@@ -1,0 +1,72 @@
+PODS:
+  - AppSyncRealTimeClient (1.7.0):
+    - Starscream (~> 4.0.4)
+  - AWSAppSync (3.4.3):
+    - AppSyncRealTimeClient (~> 1.4)
+    - AWSCore (~> 2.27.0)
+    - ReachabilitySwift (= 5.0.0)
+    - SQLite.swift (~> 0.12.2)
+  - AWSAuthCore (2.27.1):
+    - AWSCore (= 2.27.1)
+  - AWSAuthUI (2.27.1):
+    - AWSAuthCore (= 2.27.1)
+    - AWSCore (= 2.27.1)
+  - AWSCognitoIdentityProvider (2.27.1):
+    - AWSCognitoIdentityProviderASF (= 2.27.1)
+    - AWSCore (= 2.27.1)
+  - AWSCognitoIdentityProviderASF (2.27.1):
+    - AWSCore (= 2.27.1)
+  - AWSCore (2.27.1)
+  - AWSMobileClient (2.27.1):
+    - AWSAuthCore (= 2.27.1)
+    - AWSCognitoIdentityProvider (= 2.27.1)
+    - AWSCognitoIdentityProviderASF (= 2.27.1)
+    - AWSCore (= 2.27.1)
+  - AWSUserPoolsSignIn (2.27.1):
+    - AWSAuthCore (= 2.27.1)
+    - AWSCognitoIdentityProvider (= 2.27.1)
+    - AWSCore (= 2.27.1)
+  - ReachabilitySwift (5.0.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - Starscream (4.0.4)
+
+DEPENDENCIES:
+  - AWSAppSync
+  - AWSAuthUI
+  - AWSMobileClient
+  - AWSUserPoolsSignIn
+
+SPEC REPOS:
+  trunk:
+    - AppSyncRealTimeClient
+    - AWSAppSync
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSUserPoolsSignIn
+    - ReachabilitySwift
+    - SQLite.swift
+    - Starscream
+
+SPEC CHECKSUMS:
+  AppSyncRealTimeClient: 3a9c0d6685974e7f5d9ce1c157ef9873b87706b1
+  AWSAppSync: b594b384b97b689d6ca328686472600e62453613
+  AWSAuthCore: 9528c60ccdac6df6024fb0af1ed6a43782fd2d3d
+  AWSAuthUI: c95e2e0473d5bd5fe6dca392b6e0e0d9164d644f
+  AWSCognitoIdentityProvider: 4de7f96340be72c1dca35c0ba835c6b9b69a28c0
+  AWSCognitoIdentityProviderASF: 727f7c1c80d667a2da79e408c8c8745eac981d58
+  AWSCore: f859f6955a8e52dcb3e79fac95fef058639d1049
+  AWSMobileClient: 9c1edcbe7088b3c9b910aaf6faf2db43a8f1568d
+  AWSUserPoolsSignIn: cfd618f443556338309784b232acd16f02d59946
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+
+PODFILE CHECKSUM: a30df8f339d3a62f6d4405d06ded317b39ff0219
+
+COCOAPODS: 1.11.2
