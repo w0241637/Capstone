@@ -17,8 +17,12 @@
 		221FB82E27B96F1D00C02480 /* CapstoneProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82D27B96F1D00C02480 /* CapstoneProjUITests.swift */; };
 		221FB83027B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82F27B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift */; };
 		222177BF27B9821500C04757 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 222177BE27B9821500C04757 /* awsconfiguration.json */; };
+		2262F80827CE83D7003F7332 /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262F80727CE83D7003F7332 /* ServiceDetailsViewController.swift */; };
+		2262F80A27CE875E003F7332 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2262F80927CE875E003F7332 /* MapKit.framework */; };
 		226D7C5627BC282F006B56D6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D7C5527BC282F006B56D6 /* API.swift */; };
 		226F6BE827C3D39800CC1036 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6BE727C3D39800CC1036 /* AppUser.swift */; };
+		2275F57427CAA51E00EAE917 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2275F57327CAA51E00EAE917 /* CoreLocation.framework */; };
+		2275F57627CAA5ED00EAE917 /* VCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275F57527CAA5ED00EAE917 /* VCExt.swift */; };
 		4471CD4209A2CEDC4456EE00 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 378D5D3B0CCE69746A60B285 /* amplifyconfiguration.json */; };
 		96AB2588B0403A88C87FBBBC /* Pods_CapstoneProj_CapstoneProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107A40A74C211D5933188B56 /* Pods_CapstoneProj_CapstoneProjUITests.framework */; };
 		A7AD9D8CA8A7AAFAC710CB9C /* Pods_CapstoneProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */; };
@@ -61,8 +65,12 @@
 		221FB82D27B96F1D00C02480 /* CapstoneProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjUITests.swift; sourceTree = "<group>"; };
 		221FB82F27B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		222177BE27B9821500C04757 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		2262F80727CE83D7003F7332 /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
+		2262F80927CE875E003F7332 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		226D7C5527BC282F006B56D6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		226F6BE727C3D39800CC1036 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		2275F57327CAA51E00EAE917 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2275F57527CAA5ED00EAE917 /* VCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExt.swift; sourceTree = "<group>"; };
 		36864075D9C20E80C35DD14E /* Pods-CapstoneProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProj.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProj/Pods-CapstoneProj.debug.xcconfig"; sourceTree = "<group>"; };
 		378D5D3B0CCE69746A60B285 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2275F57427CAA51E00EAE917 /* CoreLocation.framework in Frameworks */,
+				2262F80A27CE875E003F7332 /* MapKit.framework in Frameworks */,
 				A7AD9D8CA8A7AAFAC710CB9C /* Pods_CapstoneProj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +147,8 @@
 				221FB81727B96F1D00C02480 /* LaunchScreen.storyboard */,
 				221FB81A27B96F1D00C02480 /* Info.plist */,
 				226F6BE727C3D39800CC1036 /* AppUser.swift */,
+				2275F57527CAA5ED00EAE917 /* VCExt.swift */,
+				2262F80727CE83D7003F7332 /* ServiceDetailsViewController.swift */,
 			);
 			path = CapstoneProj;
 			sourceTree = "<group>";
@@ -174,6 +186,8 @@
 		B22E7ED367BC5C9E5D7E4641 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2262F80927CE875E003F7332 /* MapKit.framework */,
+				2275F57327CAA51E00EAE917 /* CoreLocation.framework */,
 				3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */,
 				107A40A74C211D5933188B56 /* Pods_CapstoneProj_CapstoneProjUITests.framework */,
 				FDD9BEF2347B1054FD390B42 /* Pods_CapstoneProjTests.framework */,
@@ -432,7 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2275F57627CAA5ED00EAE917 /* VCExt.swift in Sources */,
 				221FB81127B96F1800C02480 /* ViewController.swift in Sources */,
+				2262F80827CE83D7003F7332 /* ServiceDetailsViewController.swift in Sources */,
 				226F6BE827C3D39800CC1036 /* AppUser.swift in Sources */,
 				221FB80D27B96F1800C02480 /* AppDelegate.swift in Sources */,
 				226D7C5627BC282F006B56D6 /* API.swift in Sources */,
@@ -619,6 +635,7 @@
 				DEVELOPMENT_TEAM = L877DQ476D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CapstoneProj/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to know when the job is.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -648,6 +665,7 @@
 				DEVELOPMENT_TEAM = L877DQ476D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CapstoneProj/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to know when the job is.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

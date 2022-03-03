@@ -8,11 +8,16 @@
 /*
  AWSMobile Client Documentation
  https://aws-amplify.github.io/aws-sdk-ios/docs/reference/AWSMobileClient/index.html
+ 
+ apple timer Documentation
+ https://developer.apple.com/documentation/foundation/timer/1415941-scheduledtimer
  */
+
 
 import UIKit
 import AWSMobileClient
 import AWSAppSync
+import CoreLocation
 
 class ViewController: UITableViewController {
     
@@ -28,7 +33,17 @@ class ViewController: UITableViewController {
         
         let user = users[indexPath.row]
         cell.textLabel?.text = user.userName
-        cell.detailTextLabel?.text = "\(user.locLat) \(user.locLng)"
+        
+        
+        let cellLoc = CLLocation(latitude: user.locLat, longitude: user.locLng)
+        var msg = "error, unknown location"
+        if let uLoc = ViewController.userLoc {
+            let dist = uLoc.distance(from: cellLoc)
+            msg = "\(dist) meters?"
+        }
+        
+//        cell.detailTextLabel?.text = "\(user.locLat) \(user.locLng)"
+        cell.detailTextLabel?.text = msg
         
         return cell
     }
@@ -36,6 +51,22 @@ class ViewController: UITableViewController {
     //called when UI loaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startLocationUpdates()
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true){(t) in
+        if ViewController.userLoc != nil {
+            t.invalidate()
+            self.tableView.reloadData()
+        }
+            
+        }
+//        Timer.scheduledTimer(withTimeInterval: 3.0, target: <#T##Any#>, repeats: true) { (t) in
+//            if ViewController.userLoc != nil {
+//                t.invalidate()
+//                self.tableView.reloadData()
+//            }
+//        }
         
         
         appSyncClient = (UIApplication.shared.delegate as! AppDelegate).appSyncClient
@@ -63,7 +94,7 @@ class ViewController: UITableViewController {
                 }
                 else{
                     self.fetchUsers()
-                    AWSMobileClient.sharedInstance().signOut()
+//                    AWSMobileClient.sharedInstance().signOut()
                 }
             }
         }
@@ -118,7 +149,15 @@ class ViewController: UITableViewController {
         })
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ServiceDetailsViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let user = self.users[row]
+                vc.appUser = user
+            }
+        }
+    }
+    
 }
 
 
