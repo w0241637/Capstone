@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220CDEC227D42765003D7DB8 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220CDEC127D42764003D7DB8 /* Contacts.framework */; };
 		221FB80D27B96F1800C02480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB80C27B96F1800C02480 /* AppDelegate.swift */; };
 		221FB80F27B96F1800C02480 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB80E27B96F1800C02480 /* SceneDelegate.swift */; };
 		221FB81127B96F1800C02480 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB81027B96F1800C02480 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		0082FBCC1B626782EF8D077D /* Pods-CapstoneProjTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProjTests.release.xcconfig"; path = "Target Support Files/Pods-CapstoneProjTests/Pods-CapstoneProjTests.release.xcconfig"; sourceTree = "<group>"; };
 		107A40A74C211D5933188B56 /* Pods_CapstoneProj_CapstoneProjUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProj_CapstoneProjUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E71CAE1D71EBB1B2D62A293 /* Pods-CapstoneProj-CapstoneProjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProj-CapstoneProjUITests.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProj-CapstoneProjUITests/Pods-CapstoneProj-CapstoneProjUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		220CDEC127D42764003D7DB8 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		221FB80927B96F1800C02480 /* CapstoneProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		221FB80C27B96F1800C02480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		221FB80E27B96F1800C02480 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2275F57427CAA51E00EAE917 /* CoreLocation.framework in Frameworks */,
+				220CDEC227D42765003D7DB8 /* Contacts.framework in Frameworks */,
 				2262F80A27CE875E003F7332 /* MapKit.framework in Frameworks */,
 				A7AD9D8CA8A7AAFAC710CB9C /* Pods_CapstoneProj.framework in Frameworks */,
 			);
@@ -186,6 +189,7 @@
 		B22E7ED367BC5C9E5D7E4641 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				220CDEC127D42764003D7DB8 /* Contacts.framework */,
 				2262F80927CE875E003F7332 /* MapKit.framework */,
 				2275F57327CAA51E00EAE917 /* CoreLocation.framework */,
 				3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */,
