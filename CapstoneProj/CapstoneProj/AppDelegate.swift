@@ -5,11 +5,31 @@
 //  Created by Tim Mailman on 2022-02-13.
 //
 
+<<<<<<< HEAD
+=======
+/*
+ AWS Documentation
+ https://docs.amplify.aws/sdk/api/graphql/q/platform/ios/#authorization-modes
+ 
+ GraphQL Authentication
+ https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html
+ https://docs.amplify.aws/cli/graphql/authorization-rules
+ 
+ GraphQL Setup
+ https://docs.amplify.aws/cli-legacy/graphql-transformer/auth/
+ */
+
+>>>>>>> develop
 import UIKit
 import AWSAppSync
 import AWSMobileClient
 
 
+<<<<<<< HEAD
+=======
+
+//class for connecting AWS Cognito User Pools
+>>>>>>> develop
 class MyCognitoUserPoolsAuthProvider : AWSCognitoUserPoolsAuthProviderAsync {
     func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
         AWSMobileClient.default().getTokens { (tokens, error) in
@@ -37,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+<<<<<<< HEAD
+=======
+    //method to initialize from aws documentation
+>>>>>>> develop
     func initializeAppSync() {
             do {
                 // You can choose the directory in which AppSync stores its persistent cache databases
@@ -52,7 +76,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 print("Error initializing appsync client. \(error)")
             }
+<<<<<<< HEAD
         }//</initializeAppSync
+=======
+        }
+    //</initializeAppSync
+>>>>>>> develop
 
     // MARK: UISceneSession Lifecycle
 

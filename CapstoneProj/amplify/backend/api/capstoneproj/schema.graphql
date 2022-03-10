@@ -1,6 +1,10 @@
 type AppUser @model @auth(rules: [
   { allow: public, operations: [read]}
   { allow: owner }
+<<<<<<< HEAD
+=======
+  { allow: private }
+>>>>>>> develop
 ]) {
   id: ID!
   userName: String
@@ -11,6 +15,10 @@ type AppUser @model @auth(rules: [
 type SvcReq @model @auth(rules: [
   { allow: public, operations: [read]}
   { allow: owner }
+<<<<<<< HEAD
+=======
+  { allow: private }
+>>>>>>> develop
 ]) {
   id: ID!
   custUName: String
