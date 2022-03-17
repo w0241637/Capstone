@@ -133,21 +133,20 @@ class ViewController: UITableViewController {
     }
     
     
-    // this doesnt work yet
-    func fetchSvcReqs(){
-        let q = ListSvcReqsQuery()
-        
+//    func fetchSvcReqs(){
+//        let q = ListSvcReqsQuery()
 //
-//        let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
-//
-//        let filter = ModelAppUserFilterInput(userName:filterInput)
-//        q.filter = filter
-//
-        appSyncClient?.fetch(query: q, cachePolicy: .fetchIgnoringCacheData, resultHandler: {(results, error) in
-            guard error == nil else {return}
-            print (results?.data?.listSvcReqs?.items ?? "no users")
-        })
-    }
+////
+////        let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
+////
+////        let filter = ModelAppUserFilterInput(userName:filterInput)
+////        q.filter = filter
+////
+//        appSyncClient?.fetch(query: q, cachePolicy: .fetchIgnoringCacheData, resultHandler: {(results, error) in
+//            guard error == nil else {return}
+//            print (results?.data?.listSvcReqs?.items ?? "no users")
+//        })
+//    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ServiceDetailsViewController {
