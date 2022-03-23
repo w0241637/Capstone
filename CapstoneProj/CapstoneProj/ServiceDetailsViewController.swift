@@ -49,7 +49,8 @@ class ServiceDetailsViewController: UIViewController {
             guard let pa =  pm.postalAddress else {return}
             let addr = addrFormatter.string(from:pa)
             
-            let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: self.appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr)
+            let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: self.appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr, accept: false)
+            //here mar 22
             let mut = CreateSvcReqMutation(input: input)
             (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler:{
                 (result, error) in

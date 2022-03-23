@@ -26,4 +26,5 @@ type SvcReq @model @auth(rules: [
   svcLat: Float
   svcLng: Float
   svcAddr: String
+  accept: Boolean
 }

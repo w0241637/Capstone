@@ -52,6 +52,7 @@ mutation CreateSvcReq(
     svcLat
     svcLng
     svcAddr
+    accept
     createdAt
     updatedAt
     owner
@@ -68,6 +69,7 @@ mutation UpdateSvcReq(
     svcLat
     svcLng
     svcAddr
+    accept
     createdAt
     updatedAt
     owner
@@ -84,6 +86,7 @@ mutation DeleteSvcReq(
     svcLat
     svcLng
     svcAddr
+    accept
     createdAt
     updatedAt
     owner
