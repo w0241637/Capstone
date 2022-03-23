@@ -28,22 +28,18 @@ class RequestsTableViewController: UITableViewController {
         }
         appSyncClient = (UIApplication.shared.delegate as! AppDelegate).appSyncClient
 fetchSvcReqs()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     func fetchSvcReqs(){
         let q = ListSvcReqsQuery()
         
-//
+        
 //        let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
-//
-//        let filter = ModelAppUserFilterInput(userName:filterInput)
+//        let filter = ModelSvcReqFilterInput(custUName:filterInput)
 //        q.filter = filter
-//
+        
+
         appSyncClient?.fetch(query: q, cachePolicy: .fetchIgnoringCacheData, resultHandler: {(results, error) in
             guard error == nil else {return}
             print (results?.data?.listSvcReqs?.items ?? "no requests")

@@ -41,6 +41,14 @@ class RequestDetailsViewController: UIViewController {
     }
     */
     @IBAction func doBtnAccept(_ sender: Any) {
+        guard let sId = svcReq?.id else { return }
+        let input = UpdateSvcReqInput(id: sId, accept: true)
+        
+        let mut = UpdateSvcReqMutation(input: input)
+        (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler: { (result, error) in
+            print (error)
+            print (result)
+        })
     }
     
 }

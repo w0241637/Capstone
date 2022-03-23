@@ -36,6 +36,7 @@ query GetSvcReq($id: ID!) {
     svcLat
     svcLng
     svcAddr
+    accept
     createdAt
     updatedAt
     owner
@@ -54,6 +55,7 @@ query ListSvcReqs(
       svcLat
       svcLng
       svcAddr
+      accept
       createdAt
       updatedAt
       owner

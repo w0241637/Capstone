@@ -14,4 +14,5 @@ class SvcReq : Codable {
     var svcLat = 0.0
     var svcLng = 0.0
     var svcAddr: String = ""
+    var accept = false
 }
