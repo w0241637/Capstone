@@ -35,11 +35,15 @@ fetchSvcReqs()
         let q = ListSvcReqsQuery()
         
         
-//        let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
-//        let filter = ModelSvcReqFilterInput(custUName:filterInput)
-//        q.filter = filter
+        let filterInput = ModelStringInput(eq: AWSMobileClient.sharedInstance().username)
+        let filter = ModelSvcReqFilterInput(provUName:filterInput)
+        q.filter = filter
         
-
+//don't see jobs that have been claimed'
+        let fi2 = ModelBooleanInput(eq: false)
+        let f2 = ModelSvcReqFilterInput(accept: fi2)
+        q.filter?.and = [f2]
+        
         appSyncClient?.fetch(query: q, cachePolicy: .fetchIgnoringCacheData, resultHandler: {(results, error) in
             guard error == nil else {return}
             print (results?.data?.listSvcReqs?.items ?? "no requests")

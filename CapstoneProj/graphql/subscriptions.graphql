@@ -41,6 +41,8 @@ subscription OnCreateSvcReq($owner: String) {
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
@@ -55,6 +57,8 @@ subscription OnUpdateSvcReq($owner: String) {
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
@@ -69,6 +73,8 @@ subscription OnDeleteSvcReq($owner: String) {
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner

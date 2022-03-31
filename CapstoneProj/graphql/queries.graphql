@@ -37,6 +37,8 @@ query GetSvcReq($id: ID!) {
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
@@ -56,6 +58,8 @@ query ListSvcReqs(
       svcLng
       svcAddr
       accept
+      driverLat
+      driverLng
       createdAt
       updatedAt
       owner

@@ -53,6 +53,8 @@ mutation CreateSvcReq(
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
@@ -70,6 +72,8 @@ mutation UpdateSvcReq(
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
@@ -87,6 +91,8 @@ mutation DeleteSvcReq(
     svcLng
     svcAddr
     accept
+    driverLat
+    driverLng
     createdAt
     updatedAt
     owner
