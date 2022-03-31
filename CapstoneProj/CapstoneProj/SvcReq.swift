@@ -15,4 +15,6 @@ class SvcReq : Codable {
     var svcLng = 0.0
     var svcAddr: String = ""
     var accept = false
+    var driverLat = 0.0
+    var driverLng = 0.0
 }

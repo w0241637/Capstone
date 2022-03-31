@@ -48,7 +48,37 @@ class RequestDetailsViewController: UIViewController {
         (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler: { (result, error) in
             print (error)
             print (result)
+            
+            if error == nil {
+                self.sendLocation()
+            }
+            
         })
+    }
+//    update service request with user location as they start moving
+    
+    func sendLocation(){
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { (t) in
+            
+//            user location
+            guard let uLoc = ViewController.userLoc else {return}
+//            get data to send to server
+            
+            guard let sId = self.svcReq?.id else { return }
+            let input = UpdateSvcReqInput(id: sId, driverLat: uLoc.coordinate.latitude, driverLng: uLoc.coordinate.longitude)
+            
+            let mut = UpdateSvcReqMutation(input: input)
+            (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler: { (result, error) in
+                print (error)
+                print (result)
+//
+//                if error == nil {
+//                    self.sendLocation()
+//                }
+                
+            })
+            
+        }
     }
     
 }

@@ -522,8 +522,8 @@ public struct DeleteAppUserInput: GraphQLMapConvertible {
 public struct CreateSvcReqInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil) {
-    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept]
+  public init(id: GraphQLID? = nil, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil) {
+    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng]
   }
 
   public var id: GraphQLID? {
@@ -588,13 +588,31 @@ public struct CreateSvcReqInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "accept")
     }
   }
+
+  public var driverLat: Double? {
+    get {
+      return graphQLMap["driverLat"] as! Double?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLat")
+    }
+  }
+
+  public var driverLng: Double? {
+    get {
+      return graphQLMap["driverLng"] as! Double?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLng")
+    }
+  }
 }
 
 public struct ModelSvcReqConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(custUName: ModelStringInput? = nil, provUName: ModelStringInput? = nil, svcLat: ModelFloatInput? = nil, svcLng: ModelFloatInput? = nil, svcAddr: ModelStringInput? = nil, accept: ModelBooleanInput? = nil, and: [ModelSvcReqConditionInput?]? = nil, or: [ModelSvcReqConditionInput?]? = nil, not: ModelSvcReqConditionInput? = nil) {
-    graphQLMap = ["custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "and": and, "or": or, "not": not]
+  public init(custUName: ModelStringInput? = nil, provUName: ModelStringInput? = nil, svcLat: ModelFloatInput? = nil, svcLng: ModelFloatInput? = nil, svcAddr: ModelStringInput? = nil, accept: ModelBooleanInput? = nil, driverLat: ModelFloatInput? = nil, driverLng: ModelFloatInput? = nil, and: [ModelSvcReqConditionInput?]? = nil, or: [ModelSvcReqConditionInput?]? = nil, not: ModelSvcReqConditionInput? = nil) {
+    graphQLMap = ["custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "and": and, "or": or, "not": not]
   }
 
   public var custUName: ModelStringInput? {
@@ -648,6 +666,24 @@ public struct ModelSvcReqConditionInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "accept")
+    }
+  }
+
+  public var driverLat: ModelFloatInput? {
+    get {
+      return graphQLMap["driverLat"] as! ModelFloatInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLat")
+    }
+  }
+
+  public var driverLng: ModelFloatInput? {
+    get {
+      return graphQLMap["driverLng"] as! ModelFloatInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLng")
     }
   }
 
@@ -726,8 +762,8 @@ public struct ModelBooleanInput: GraphQLMapConvertible {
 public struct UpdateSvcReqInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil) {
-    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept]
+  public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil) {
+    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng]
   }
 
   public var id: GraphQLID {
@@ -790,6 +826,24 @@ public struct UpdateSvcReqInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "accept")
+    }
+  }
+
+  public var driverLat: Double? {
+    get {
+      return graphQLMap["driverLat"] as! Double?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLat")
+    }
+  }
+
+  public var driverLng: Double? {
+    get {
+      return graphQLMap["driverLng"] as! Double?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLng")
     }
   }
 }
@@ -1010,8 +1064,8 @@ public struct ModelIDInput: GraphQLMapConvertible {
 public struct ModelSvcReqFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, custUName: ModelStringInput? = nil, provUName: ModelStringInput? = nil, svcLat: ModelFloatInput? = nil, svcLng: ModelFloatInput? = nil, svcAddr: ModelStringInput? = nil, accept: ModelBooleanInput? = nil, and: [ModelSvcReqFilterInput?]? = nil, or: [ModelSvcReqFilterInput?]? = nil, not: ModelSvcReqFilterInput? = nil) {
-    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "and": and, "or": or, "not": not]
+  public init(id: ModelIDInput? = nil, custUName: ModelStringInput? = nil, provUName: ModelStringInput? = nil, svcLat: ModelFloatInput? = nil, svcLng: ModelFloatInput? = nil, svcAddr: ModelStringInput? = nil, accept: ModelBooleanInput? = nil, driverLat: ModelFloatInput? = nil, driverLng: ModelFloatInput? = nil, and: [ModelSvcReqFilterInput?]? = nil, or: [ModelSvcReqFilterInput?]? = nil, not: ModelSvcReqFilterInput? = nil) {
+    graphQLMap = ["id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDInput? {
@@ -1074,6 +1128,24 @@ public struct ModelSvcReqFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "accept")
+    }
+  }
+
+  public var driverLat: ModelFloatInput? {
+    get {
+      return graphQLMap["driverLat"] as! ModelFloatInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLat")
+    }
+  }
+
+  public var driverLng: ModelFloatInput? {
+    get {
+      return graphQLMap["driverLng"] as! ModelFloatInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "driverLng")
     }
   }
 
@@ -1530,7 +1602,7 @@ public final class DeleteAppUserMutation: GraphQLMutation {
 
 public final class CreateSvcReqMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateSvcReq($input: CreateSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  createSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "mutation CreateSvcReq($input: CreateSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  createSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var input: CreateSvcReqInput
   public var condition: ModelSvcReqConditionInput?
@@ -1582,6 +1654,8 @@ public final class CreateSvcReqMutation: GraphQLMutation {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -1593,8 +1667,8 @@ public final class CreateSvcReqMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -1669,6 +1743,24 @@ public final class CreateSvcReqMutation: GraphQLMutation {
         }
       }
 
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1701,7 +1793,7 @@ public final class CreateSvcReqMutation: GraphQLMutation {
 
 public final class UpdateSvcReqMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateSvcReq($input: UpdateSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  updateSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "mutation UpdateSvcReq($input: UpdateSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  updateSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var input: UpdateSvcReqInput
   public var condition: ModelSvcReqConditionInput?
@@ -1753,6 +1845,8 @@ public final class UpdateSvcReqMutation: GraphQLMutation {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -1764,8 +1858,8 @@ public final class UpdateSvcReqMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -1840,6 +1934,24 @@ public final class UpdateSvcReqMutation: GraphQLMutation {
         }
       }
 
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1872,7 +1984,7 @@ public final class UpdateSvcReqMutation: GraphQLMutation {
 
 public final class DeleteSvcReqMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteSvcReq($input: DeleteSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  deleteSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "mutation DeleteSvcReq($input: DeleteSvcReqInput!, $condition: ModelSvcReqConditionInput) {\n  deleteSvcReq(input: $input, condition: $condition) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var input: DeleteSvcReqInput
   public var condition: ModelSvcReqConditionInput?
@@ -1924,6 +2036,8 @@ public final class DeleteSvcReqMutation: GraphQLMutation {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -1935,8 +2049,8 @@ public final class DeleteSvcReqMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -2008,6 +2122,24 @@ public final class DeleteSvcReqMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "accept")
+        }
+      }
+
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
         }
       }
 
@@ -2372,7 +2504,7 @@ public final class ListAppUsersQuery: GraphQLQuery {
 
 public final class GetSvcReqQuery: GraphQLQuery {
   public static let operationString =
-    "query GetSvcReq($id: ID!) {\n  getSvcReq(id: $id) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "query GetSvcReq($id: ID!) {\n  getSvcReq(id: $id) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var id: GraphQLID
 
@@ -2422,6 +2554,8 @@ public final class GetSvcReqQuery: GraphQLQuery {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -2433,8 +2567,8 @@ public final class GetSvcReqQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -2509,6 +2643,24 @@ public final class GetSvcReqQuery: GraphQLQuery {
         }
       }
 
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -2541,7 +2693,7 @@ public final class GetSvcReqQuery: GraphQLQuery {
 
 public final class ListSvcReqsQuery: GraphQLQuery {
   public static let operationString =
-    "query ListSvcReqs($filter: ModelSvcReqFilterInput, $limit: Int, $nextToken: String) {\n  listSvcReqs(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      custUName\n      provUName\n      svcLat\n      svcLng\n      svcAddr\n      accept\n      createdAt\n      updatedAt\n      owner\n    }\n    nextToken\n  }\n}"
+    "query ListSvcReqs($filter: ModelSvcReqFilterInput, $limit: Int, $nextToken: String) {\n  listSvcReqs(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      custUName\n      provUName\n      svcLat\n      svcLng\n      svcAddr\n      accept\n      driverLat\n      driverLng\n      createdAt\n      updatedAt\n      owner\n    }\n    nextToken\n  }\n}"
 
   public var filter: ModelSvcReqFilterInput?
   public var limit: Int?
@@ -2641,6 +2793,8 @@ public final class ListSvcReqsQuery: GraphQLQuery {
           GraphQLField("svcLng", type: .scalar(Double.self)),
           GraphQLField("svcAddr", type: .scalar(String.self)),
           GraphQLField("accept", type: .scalar(Bool.self)),
+          GraphQLField("driverLat", type: .scalar(Double.self)),
+          GraphQLField("driverLng", type: .scalar(Double.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("owner", type: .scalar(String.self)),
@@ -2652,8 +2806,8 @@ public final class ListSvcReqsQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-          self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+        public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+          self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
         }
 
         public var __typename: String {
@@ -2725,6 +2879,24 @@ public final class ListSvcReqsQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "accept")
+          }
+        }
+
+        public var driverLat: Double? {
+          get {
+            return snapshot["driverLat"] as? Double
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "driverLat")
+          }
+        }
+
+        public var driverLng: Double? {
+          get {
+            return snapshot["driverLng"] as? Double
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "driverLng")
           }
         }
 
@@ -3178,7 +3350,7 @@ public final class OnDeleteAppUserSubscription: GraphQLSubscription {
 
 public final class OnCreateSvcReqSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateSvcReq($owner: String) {\n  onCreateSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "subscription OnCreateSvcReq($owner: String) {\n  onCreateSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var owner: String?
 
@@ -3228,6 +3400,8 @@ public final class OnCreateSvcReqSubscription: GraphQLSubscription {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -3239,8 +3413,8 @@ public final class OnCreateSvcReqSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -3315,6 +3489,24 @@ public final class OnCreateSvcReqSubscription: GraphQLSubscription {
         }
       }
 
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3347,7 +3539,7 @@ public final class OnCreateSvcReqSubscription: GraphQLSubscription {
 
 public final class OnUpdateSvcReqSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateSvcReq($owner: String) {\n  onUpdateSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "subscription OnUpdateSvcReq($owner: String) {\n  onUpdateSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var owner: String?
 
@@ -3397,6 +3589,8 @@ public final class OnUpdateSvcReqSubscription: GraphQLSubscription {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -3408,8 +3602,8 @@ public final class OnUpdateSvcReqSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -3484,6 +3678,24 @@ public final class OnUpdateSvcReqSubscription: GraphQLSubscription {
         }
       }
 
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3516,7 +3728,7 @@ public final class OnUpdateSvcReqSubscription: GraphQLSubscription {
 
 public final class OnDeleteSvcReqSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteSvcReq($owner: String) {\n  onDeleteSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    createdAt\n    updatedAt\n    owner\n  }\n}"
+    "subscription OnDeleteSvcReq($owner: String) {\n  onDeleteSvcReq(owner: $owner) {\n    __typename\n    id\n    custUName\n    provUName\n    svcLat\n    svcLng\n    svcAddr\n    accept\n    driverLat\n    driverLng\n    createdAt\n    updatedAt\n    owner\n  }\n}"
 
   public var owner: String?
 
@@ -3566,6 +3778,8 @@ public final class OnDeleteSvcReqSubscription: GraphQLSubscription {
         GraphQLField("svcLng", type: .scalar(Double.self)),
         GraphQLField("svcAddr", type: .scalar(String.self)),
         GraphQLField("accept", type: .scalar(Bool.self)),
+        GraphQLField("driverLat", type: .scalar(Double.self)),
+        GraphQLField("driverLng", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("owner", type: .scalar(String.self)),
@@ -3577,8 +3791,8 @@ public final class OnDeleteSvcReqSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
-        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
+      public init(id: GraphQLID, custUName: String? = nil, provUName: String? = nil, svcLat: Double? = nil, svcLng: Double? = nil, svcAddr: String? = nil, accept: Bool? = nil, driverLat: Double? = nil, driverLng: Double? = nil, createdAt: String, updatedAt: String, owner: String? = nil) {
+        self.init(snapshot: ["__typename": "SvcReq", "id": id, "custUName": custUName, "provUName": provUName, "svcLat": svcLat, "svcLng": svcLng, "svcAddr": svcAddr, "accept": accept, "driverLat": driverLat, "driverLng": driverLng, "createdAt": createdAt, "updatedAt": updatedAt, "owner": owner])
       }
 
       public var __typename: String {
@@ -3650,6 +3864,24 @@ public final class OnDeleteSvcReqSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "accept")
+        }
+      }
+
+      public var driverLat: Double? {
+        get {
+          return snapshot["driverLat"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLat")
+        }
+      }
+
+      public var driverLng: Double? {
+        get {
+          return snapshot["driverLng"] as? Double
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "driverLng")
         }
       }
 

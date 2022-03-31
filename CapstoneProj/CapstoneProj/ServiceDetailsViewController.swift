@@ -18,6 +18,8 @@ class ServiceDetailsViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var appUser : AppUser?
+    var watcher : AWSAppSyncSubscriptionWatcher<OnUpdateSvcReqSubscription>?
+    var annotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,10 @@ class ServiceDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let user = appUser{
             mapView.showsUserLocation = true
-            let ann = MKPointAnnotation()
-            ann.coordinate = CLLocationCoordinate2D(latitude: user.locLat, longitude: user.locLng)
-            mapView.addAnnotation(ann)
+//            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: user.locLat, longitude: user.locLng)
+            mapView.addAnnotation(annotation)
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
         
@@ -39,7 +42,7 @@ class ServiceDetailsViewController: UIViewController {
         
         guard let userLoc = ViewController.userLoc else {return}
         
-        CLGeocoder().reverseGeocodeLocation(userLoc){(placemarks, error)in
+        CLGeocoder().reverseGeocodeLocation(userLoc) { (placemarks, error) in
             guard error == nil else {return}
             
             guard let pm = placemarks?.first else {return}
@@ -49,18 +52,35 @@ class ServiceDetailsViewController: UIViewController {
             guard let pa =  pm.postalAddress else {return}
             let addr = addrFormatter.string(from:pa)
             
-            let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: self.appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr, accept: false)
+            let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: self.appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr, accept: false, driverLat: 0.0, driverLng: 0.0)
             //here mar 22
+//            when creating service request  get values
             let mut = CreateSvcReqMutation(input: input)
             (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler:{
                 (result, error) in
                 print (error?.localizedDescription)
                 print (result)
+                
+//                start subscription
+                self.startSub()
             })
             
             
         }
+
         
 //        let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr)
     }
+    //        when user creats service, subscribe to it to get updates from driver
+            func startSub(){
+                watcher = try? (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.subscribe(subscription: OnUpdateSvcReqSubscription(), resultHandler: { (result, trans, error) in
+                    guard let result = result else {return}
+                    guard let updatedSR = result.data?.onUpdateSvcReq else {return}
+                    let lat = updatedSR.driverLat ?? 0.0
+                    let lng = updatedSR.driverLng ?? 0.0
+                    DispatchQueue.main.async {
+                        self.annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                        }
+                    })
+            }
 }
