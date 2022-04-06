@@ -21,4 +21,6 @@ type SvcReq @model @auth(rules: [
   svcLng: Float
   svcAddr: String
   accept: Boolean
+  driverLat: Float
+  driverLng: Float
 }

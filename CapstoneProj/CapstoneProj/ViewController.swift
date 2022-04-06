@@ -24,6 +24,7 @@ class ViewController: UITableViewController {
     var appSyncClient: AWSAppSyncClient?
     var users = [AppUser]()
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -47,11 +48,15 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    
 
     //called when UI loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startLocationUpdates()
+        
+//        guard let uLoc = ViewController.userLoc else {return}
         
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true){(t) in
