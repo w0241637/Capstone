@@ -14,7 +14,7 @@
 		221FB81427B96F1800C02480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221FB81227B96F1800C02480 /* Main.storyboard */; };
 		221FB81627B96F1D00C02480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221FB81527B96F1D00C02480 /* Assets.xcassets */; };
 		221FB81927B96F1D00C02480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221FB81727B96F1D00C02480 /* LaunchScreen.storyboard */; };
-		221FB82427B96F1D00C02480 /* CapstoneProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82327B96F1D00C02480 /* CapstoneProjTests.swift */; };
+		221FB82427B96F1D00C02480 /* CapstoneProjTestsAppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82327B96F1D00C02480 /* CapstoneProjTestsAppUser.swift */; };
 		221FB82E27B96F1D00C02480 /* CapstoneProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82D27B96F1D00C02480 /* CapstoneProjUITests.swift */; };
 		221FB83027B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FB82F27B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift */; };
 		222177BF27B9821500C04757 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 222177BE27B9821500C04757 /* awsconfiguration.json */; };
@@ -27,6 +27,7 @@
 		2280E29A27DF9863006190B6 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280E29927DF9863006190B6 /* RequestsTableViewController.swift */; };
 		2280E29C27DF9B08006190B6 /* SvcReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280E29B27DF9B08006190B6 /* SvcReq.swift */; };
 		2280E29E27E011BC006190B6 /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280E29D27E011BC006190B6 /* RequestDetailsViewController.swift */; };
+		22D0635A2803530A005FD74B /* CapstoneProjTestsSvcReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D063592803530A005FD74B /* CapstoneProjTestsSvcReq.swift */; };
 		4471CD4209A2CEDC4456EE00 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 378D5D3B0CCE69746A60B285 /* amplifyconfiguration.json */; };
 		96AB2588B0403A88C87FBBBC /* Pods_CapstoneProj_CapstoneProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107A40A74C211D5933188B56 /* Pods_CapstoneProj_CapstoneProjUITests.framework */; };
 		A7AD9D8CA8A7AAFAC710CB9C /* Pods_CapstoneProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */; };
@@ -65,7 +66,7 @@
 		221FB81827B96F1D00C02480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221FB81A27B96F1D00C02480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		221FB81F27B96F1D00C02480 /* CapstoneProjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneProjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		221FB82327B96F1D00C02480 /* CapstoneProjTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjTests.swift; sourceTree = "<group>"; };
+		221FB82327B96F1D00C02480 /* CapstoneProjTestsAppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjTestsAppUser.swift; sourceTree = "<group>"; };
 		221FB82927B96F1D00C02480 /* CapstoneProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		221FB82D27B96F1D00C02480 /* CapstoneProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjUITests.swift; sourceTree = "<group>"; };
 		221FB82F27B96F1D00C02480 /* CapstoneProjUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		2280E29927DF9863006190B6 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
 		2280E29B27DF9B08006190B6 /* SvcReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvcReq.swift; sourceTree = "<group>"; };
 		2280E29D27E011BC006190B6 /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewController.swift; sourceTree = "<group>"; };
+		22D063592803530A005FD74B /* CapstoneProjTestsSvcReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneProjTestsSvcReq.swift; sourceTree = "<group>"; };
 		36864075D9C20E80C35DD14E /* Pods-CapstoneProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProj.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProj/Pods-CapstoneProj.debug.xcconfig"; sourceTree = "<group>"; };
 		378D5D3B0CCE69746A60B285 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		3C25798BB1FDBB0552400560 /* Pods_CapstoneProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapstoneProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,7 +170,8 @@
 		221FB82227B96F1D00C02480 /* CapstoneProjTests */ = {
 			isa = PBXGroup;
 			children = (
-				221FB82327B96F1D00C02480 /* CapstoneProjTests.swift */,
+				221FB82327B96F1D00C02480 /* CapstoneProjTestsAppUser.swift */,
+				22D063592803530A005FD74B /* CapstoneProjTestsSvcReq.swift */,
 			);
 			path = CapstoneProjTests;
 			sourceTree = "<group>";
@@ -476,7 +479,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221FB82427B96F1D00C02480 /* CapstoneProjTests.swift in Sources */,
+				221FB82427B96F1D00C02480 /* CapstoneProjTestsAppUser.swift in Sources */,
+				22D0635A2803530A005FD74B /* CapstoneProjTestsSvcReq.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
