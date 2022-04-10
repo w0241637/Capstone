@@ -35,6 +35,7 @@ class ViewController: UITableViewController {
 =======
     var users = [AppUser]()
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -58,11 +59,15 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    
 
     //called when UI loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startLocationUpdates()
+        
+//        guard let uLoc = ViewController.userLoc else {return}
         
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true){(t) in
@@ -136,9 +141,7 @@ class ViewController: UITableViewController {
         
         //filter out current user
         let q = ListAppUsersQuery()
-//        let filterInput03 = ModelAppUserFilterInput(ne: AWSMobileClient.sharedInstance().username)
-//        let filterInput02 = ModelAppUserFilterInput(!=: AWSMobileClient.sharedInstance().username)
-//        let filterInput04 = ModelStringInput(!=: AWSMobileClient.sharedInstance().username)
+
         let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
         let filter = ModelAppUserFilterInput(userName:filterInput)
         q.filter = filter
@@ -164,20 +167,7 @@ class ViewController: UITableViewController {
     }
     
     
-//    func fetchSvcReqs(){
-//        let q = ListSvcReqsQuery()
-//
-////
-////        let filterInput = ModelStringInput(ne: AWSMobileClient.sharedInstance().username)
-////
-////        let filter = ModelAppUserFilterInput(userName:filterInput)
-////        q.filter = filter
-////
-//        appSyncClient?.fetch(query: q, cachePolicy: .fetchIgnoringCacheData, resultHandler: {(results, error) in
-//            guard error == nil else {return}
-//            print (results?.data?.listSvcReqs?.items ?? "no users")
-//        })
-//    }
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ServiceDetailsViewController {

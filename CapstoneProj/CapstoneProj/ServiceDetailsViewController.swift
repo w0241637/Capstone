@@ -27,7 +27,7 @@ class ServiceDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let user = appUser{
             mapView.showsUserLocation = true
-//            let annotation = MKPointAnnotation()
+
             
             annotation.coordinate = CLLocationCoordinate2D(latitude: user.locLat, longitude: user.locLng)
             mapView.addAnnotation(annotation)
@@ -53,7 +53,7 @@ class ServiceDetailsViewController: UIViewController {
             let addr = addrFormatter.string(from:pa)
             
             let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: self.appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr, accept: false, driverLat: 0.0, driverLng: 0.0)
-            //here mar 22
+
 //            when creating service request  get values
             let mut = CreateSvcReqMutation(input: input)
             (UIApplication.shared.delegate as! AppDelegate).appSyncClient?.perform(mutation: mut, resultHandler:{
@@ -69,7 +69,7 @@ class ServiceDetailsViewController: UIViewController {
         }
 
         
-//        let input = CreateSvcReqInput.init(custUName: AWSMobileClient.sharedInstance().username ?? "no cust name", provUName: appUser?.userName ?? "no prov name", svcLat: userLoc.coordinate.latitude, svcLng: userLoc.coordinate.longitude, svcAddr: addr)
+
     }
     //        when user creats service, subscribe to it to get updates from driver
             func startSub(){
